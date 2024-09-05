@@ -1,0 +1,27 @@
+<<<<<<< HEAD
+git status
+
+git stash
+
+git add .
+
+git pull origin main
+
+git commit -m ""
+
+git push origin main
+
+=======
+git status
+
+git stash
+
+git add .
+
+git pull origin main
+
+git commit -m ""
+
+git push origin main
+
+>>>>>>> b99f4c5 (adding new files)
