@@ -459,8 +459,9 @@
         <!--  End About us  -->
 
         <!-- our clients start-->
-        <marquee class="our-clients" behavior="" direction="right">
-          <div  class="">
+         <hr class="m-0">
+          <div class="our-clients">
+            <div class="scroll-content">
               <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
               <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
               <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
@@ -468,8 +469,16 @@
               <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
               <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
               <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+              <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+              <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+              <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+              <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+              <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+              <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+              <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+            </div>
           </div>
-        </marquee>
+        <hr class="m-0">
         <!-- our clients end -->
       </main>
       <!--End-Contents-->

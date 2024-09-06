@@ -325,6 +325,21 @@
   }
 }
 
+/* our-clients */
+.our-clients{
+  margin-top: 5px;
+  width: 100%;
+  height: auto;
+  background-color: var(--secondaryshade);
+  padding: 20px;
+}
+.client_logo{
+  width: auto;
+  height: 150px;
+  margin: 0 10px;
+  border-radius: 10px;
+}
+
 
 /*** ---------------- Footer----------------------- ***/
 .footer-section{
@@ -453,20 +468,7 @@
     font-size: 35px;
   }
 }
-/* our-clients */
-.our-clients{
-  margin-top: 5px;
-  width: 100%;
-  height: auto;
-  background-color: var(--secondaryshade);
-  padding: 20px;
-}
-.client_logo{
-  width: auto;
-  height: 150px;
-  margin: 0 10px;
-  border-radius: 10px;
-}
+
 
 /* =--------------XEmp team login page css---------- */
 .tc-header-st3{
