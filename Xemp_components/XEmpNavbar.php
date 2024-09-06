@@ -75,7 +75,7 @@
             href="XEmpTeamLogin.php"
             class="butn radius-5 ms-4"
           >
-            <span> Let’s Connect </span>
+            <span>Employee Login</span>
           </a>
         </div>
       </div>

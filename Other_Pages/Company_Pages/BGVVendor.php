@@ -30,7 +30,7 @@
    </div>
 
     <!-- ========== HEADER ========== -->
-    <?php include 'Company_components\CompanyNavbar2.php' ?>
+    <?php include 'Company_components/CompanyNavbar2.php' ?>
     <!-- ========== END HEADER ========== -->
      <!-- Hero Start -->
     <section class="HeroSection container-fluid p-5">
@@ -87,11 +87,11 @@
     <!-- Hero Ends -->
 
     <!-- Footer Start -->
-    <?php include 'Company_components\CompanyFootor.php' ?>
+    <?php include 'Company_components/CompanyFootor.php' ?>
     <!-- Footer End -->
      
     <!-- User Details Modal -->
-    <?php include 'Company_components\CompanyUserModal.php' ?>
+    <?php include 'Company_components/CompanyUserModal.php' ?>
     <!-- User Details Modal -->
 
     <script src="companyJS.js"></script>

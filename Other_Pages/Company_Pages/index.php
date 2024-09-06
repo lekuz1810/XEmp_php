@@ -28,7 +28,7 @@
       </div>
    </div>
     <!-- ========== HEADER ========== -->
-    <?php include 'Company_components\CompanyNavbar.php' ?>
+    <?php include 'Company_components/CompanyNavbar.php' ?>
     <!-- ========== END HEADER ========== -->
      <!-- Hero Start -->
     <section class="HeroSection container-fluid lg:h-screen">
@@ -192,7 +192,7 @@
     <!-- Hero Ends -->
 
     <!-- Footer Start -->
-    <?php include 'Company_components\CompanyFootor.php' ?>
+    <?php include 'Company_components/CompanyFootor.php' ?>
     <!-- Footer End -->
 
     

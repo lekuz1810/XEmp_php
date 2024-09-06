@@ -22,7 +22,7 @@
   </head>
   <body>
     <!-- ========== HEADER ========== -->
-    <?php include 'Company_components\CompanyNavbar.php' ?>
+    <?php include 'Company_components/CompanyNavbar.php' ?>
     <!-- ========== END HEADER ========== -->
 
     <!-- Contact Us -->
@@ -319,11 +319,11 @@
     </div>
     <!-- End Contact Us -->
      <!-- Footer Start -->
-    <?php include 'Company_components\CompanyFootor.php' ?>
+    <?php include 'Company_components/CompanyFootor.php' ?>
     <!-- Footer End -->
      
     <!-- User Details Modal -->
-    <?php include 'Company_components\CompanyUserModal.php' ?>
+    <?php include 'Company_components/CompanyUserModal.php' ?>
     <!-- User Details Modal -->
 
     <script src="companyJS.js"></script>

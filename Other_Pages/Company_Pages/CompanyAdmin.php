@@ -29,7 +29,7 @@
       </div>
    </div>
     <!-- ========== HEADER ========== -->
-    <?php include 'Company_components\CompanyNavbar.php' ?>
+    <?php include 'Company_components/CompanyNavbar2.php' ?>
     <!-- ========== END HEADER ========== -->
      <!-- Hero Start -->
     <section class="AdminSection container-fluid lg:h-auto">
@@ -200,7 +200,7 @@
         </div>
         <div class="lg:col-span-12">
           <div class="text-center mt-3">
-              <a href="index.html"><button class="butn rounded-xl">Logout</button></a>
+              <a href="index.php"><button class="butn rounded-xl">Logout</button></a>
           </div>
         </div>
       </div>
@@ -208,11 +208,11 @@
     <!-- Hero Ends -->
 
     <!-- Footer Start -->
-    <?php include 'Company_components\CompanyFootor.php' ?>
+    <?php include 'Company_components/CompanyFootor.php' ?>
     <!-- Footer End -->
      
     <!-- User Details Modal -->
-    <?php include 'Company_components\CompanyUserModal.php' ?>
+    <?php include 'Company_components/CompanyUserModal.php' ?>
     <!-- User Details Modal -->
 
     <script src="companyJS.js"></script>

@@ -28,7 +28,7 @@
   <!-- Spinner End Here -->
 
     <!-- ========== HEADER ========== -->
-    <?php include 'Company_components\CompanyNavbar.php' ?>
+    <?php include 'Company_components/CompanyNavbar.php' ?>
 
     <!-- ========== END HEADER ========== -->
 
@@ -113,11 +113,11 @@
     <!-- End Hero -->
 
     <!-- Footer Start -->
-    <?php include 'Company_components\CompanyFootor.php' ?>
+    <?php include 'Company_components/CompanyFootor.php' ?>
     <!-- Footer End -->
      
     <!-- User Details Modal -->
-    <?php include 'Company_components\CompanyUserModal.php' ?>
+    <?php include 'Company_components/CompanyUserModal.php' ?>
     <!-- User Details Modal -->
 
     <script src="companyJS.js"></script>

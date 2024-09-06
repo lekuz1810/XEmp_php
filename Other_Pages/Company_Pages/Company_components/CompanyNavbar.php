@@ -1,7 +1,7 @@
 <header class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full">
       <nav class="navbar relative max-w-[85rem] w-full mx-auto md:flex md:items-center md:justify-between md:gap-3 py-2 px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center gap-x-1">
-          <a class="flex-none font-semibold text-xl text-black focus:outline-none focus:opacity-80" href="#" aria-label="Brand">
+          <a class="flex-none font-semibold text-xl text-black focus:outline-none focus:opacity-80" href="index.php" aria-label="Brand">
             <img
               class="w-28 h-auto"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/2560px-Infosys_logo.svg.png"

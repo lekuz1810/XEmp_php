@@ -41,40 +41,42 @@
         <a href="#" class="color-secondary mb-10 block font-bold text-gray-600 text-center">
           Unlock resources designed to elevate our performance and success.
         </a>
-        <div class="w-full md:w-6/12 text-center m-auto">
-          <p class="color-secondary mb-1 font-medium text-gray-700 m-auto">Email or Username</p>
-        <div class="mb-4 flex flex-col m-auto">
-          <div
-            class="focus-within:border-gray-400 relativeflex overflow-hidden rounded-xl border-gray-500 border transition sm:w-80 lg:w-full"
-          >
-            <input
-              type="email"
-              id="signup-email"
-              class="w-full bg-white px-4 py-3 text-base text-gray-700 placeholder-gray-400 focus:outline-none"
-              placeholder="Email or Username*"
-            />
-          </div>
-        </div>
-        <p class="color-secondary mb-1 font-medium text-gray-700 m-auto">Password</p>
-        <div class=" mb-4 flex flex-col m-auto">
-          <div
-            class="focus-within:border-gray-400 relative flex overflow-hidden rounded-xl border-gray-500 border transition sm:w-80 lg:w-full"
-          >
-            <input
-              type="password"
-              id="signin-password"
-              class="w-full bg-white px-4 py-3 text-base text-gray-700 placeholder-gray-400 focus:outline-none"
-              placeholder="Password*"
-            />
-          </div>
-        </div>
-          <div class=" text-end mb-3 font-medium text-blue-500 m-auto">
-            <a href="#">Forgot Password?</a>
-          </div>
-          <button class="butn  rounded-xl px-8 py-3 font-bold">Sign In</button>
+        <div class="w-full md:w-6/12 text-center m-auto"><br>
+          <form method="POST" action="">
+            <div class="mb-4 flex flex-col m-auto">
+              <div class="focus-within:border-gray-400 relativeflex overflow-hidden rounded-xl border-gray-500 border transition sm:w-80 lg:w-full">
+                <input type="email" id="username" name="username" class="w-full bg-white px-4 py-3 text-base text-gray-700 placeholder-gray-400 focus:outline-none" placeholder="Email or Username*"/>
+              </div>
+            </div>
+            <div class=" mb-4 flex flex-col m-auto">
+              <div class="focus-within:border-gray-400 relative flex overflow-hidden rounded-xl border-gray-500 border transition sm:w-80 lg:w-full">
+                <input type="password" id="password" name="password" class="w-full bg-white px-4 py-3 text-base text-gray-700 placeholder-gray-400 focus:outline-none" placeholder="Password*"/>
+              </div>
+            </div>
+            <div class=" text-end mb-3 font-medium text-blue-700 m-auto">
+              <a href="#">Forgot Password?</a>
+            </div>
+            <button class="butn  rounded-xl px-8 py-3 font-bold" type="Submit" name="Submit" title="Submit">Sign In</button>
+          </form>
         </div>
       </div>
       <img src="assets/img/header_circle.png" alt="" class="circle" />
     </div>
+    <?php
+    if(isset($_POST['Submit'])){
+
+        include "Xemp_Mysql_conn.php";
+
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $stmt = $conn->prepare("insert into xemp_login(username, password) VALUES(?,?)");
+        $stmt->bind_param("ss",$username,$password);
+        $stmt->execute();
+        $stmt->close();
+        $conn->close();
+        echo "Hello, World!";
+    }
+?>
   </body>
 </html>
