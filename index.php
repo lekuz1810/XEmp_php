@@ -446,7 +446,7 @@
                       </li>
                       <li class="mt-3 color-secondaryshade">
                         <b class="color-primary fsz-18 p-1 me-1">our Vision:</b>
-                        We uphold the highest ethical standards, ensuring honesty and trust in all our services.We maintain open and clear communication, fostering trust and understanding with our clients and users.
+                        Here !!!!! We uphold the highest ethical standards, ensuring honesty and trust in all our services.We maintain open and clear communication, fostering trust and understanding with our clients and users.
                       </li>
                     </ul>
                   </div>
