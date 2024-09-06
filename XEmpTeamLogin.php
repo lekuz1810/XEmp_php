@@ -62,21 +62,24 @@
       </div>
       <img src="assets/img/header_circle.png" alt="" class="circle" />
     </div>
+
     <?php
-    if(isset($_POST['Submit'])){
+      if(isset($_POST['Submit'])){
 
-        include "Xemp_Mysql_conn.php";
+          include "Xemp_Mysql_conn.php";
 
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+          $username = $_POST['username'];
+          $password = $_POST['password'];
 
-        $stmt = $conn->prepare("insert into xemp_login(username, password) VALUES(?,?)");
-        $stmt->bind_param("ss",$username,$password);
-        $stmt->execute();
-        $stmt->close();
-        $conn->close();
-        echo "Hello, World!";
-    }
-?>
+      //     $stmt = $conn->prepare("insert into xemp_login(username, password) VALUES(?,?)");
+      //     $stmt->bind_param("ss",$username,$password);
+      //     $stmt->execute();
+      //     $stmt->close();
+      //     $conn->close();
+      //     echo "Hello, World!";
+
+
+      }
+    ?>
   </body>
 </html>
