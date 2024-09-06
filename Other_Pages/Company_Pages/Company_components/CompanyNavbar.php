@@ -97,7 +97,7 @@
               <div class="flex flex-wrap items-center gap-x-1.5">
                 <a
                   class="nav-link py-2 px-2.5 inline-flex items-center font-semibold text-sm rounded-lg text-white focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                  href="./login.php"
+                  href="./CompanyLogin.php"
                 >
                   <span class="material-symbols-outlined">
                   login
