@@ -6,28 +6,34 @@
   --dark: #000000;
 
   /* selection 1 */
-  /* --primary: #DDE6ED;
-  --secondary: #27374D;
-  --primaryshade:#d2dae4;
-  --secondaryshade:#c1c8ce; */
-
-  /* selection 2 */
   --primary: #DDE6ED;
   --secondary: #27374D;
   --primaryshade:#d2dae4;
-  --secondaryshade:#c1c8ce;
+  --secondaryshade:#e3ebf8;
+
+  /* selection 2 */
+  /* --primary: #fffafa;
+  --secondary: #685c5c;
+  --primaryshade:#f3ecec;
+  --secondaryshade:#FBF0F0; */
 
   /* selection 3 */
-  /* --primary: #DDE6ED;
+  /* --primary: #f2f7ff;
   --secondary: #27374D;
-  --primaryshade:#d2dae4;
-  --secondaryshade:#c1c8ce; */
+  --primaryshade:#e5f0fc;
+  --secondaryshade:#e3ebf8; */
 
   /* selection 4 */
-  /* --primary: #DDE6ED;
-  --secondary: #27374D;
-  --primaryshade:#d2dae4;
-  --secondaryshade:#c1c8ce;*/
+  /* --primary: #F9F5E7;
+  --secondary: #4d3238;
+  --primaryshade:#F9F5E7;
+  --secondaryshade:#F8EAD8; */
+
+  /* selection 5 */
+  /* --primary: #f0ebe2;
+  --secondary: #4B6587;
+  --primaryshade:#F7F6F2;
+  --secondaryshade:#e0e0e0; */
 
 }
 

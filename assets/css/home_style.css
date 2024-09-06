@@ -244,6 +244,7 @@
   }
   .OurServies_paraCard{
       background-color: var(--secondary);
+      border: 1px solid var(--primary);
   }
   .OurServies-item p{
       display: block !important;

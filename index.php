@@ -85,7 +85,7 @@
         </div>
         <div class="load-text">
           <span>
-            <b>X</b>
+            <b>x</b>
           </span>
           <span>
             <b>E</b>
