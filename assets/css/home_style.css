@@ -326,24 +326,50 @@
 }
 
 /* our-clients */
-.our-clients{
-  margin-top: 5px;
+.our-clients {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
   width: 100%;
   height: auto;
   background-color: var(--secondaryshade);
   padding: 20px;
-}
-.client_logo{
-  width: auto;
-  height: 150px;
-  margin: 0 10px;
-  border-radius: 10px;
+  overflow: hidden !important;
+  white-space: nowrap;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 
+.scroll-content {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+.client_logo {
+  width: auto;
+  height: 50px !important;
+  margin: 0 10px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Duplicating the logos to create a seamless loop */
+.scroll-content img {
+  flex-shrink: 0;
+}
 
 /*** ---------------- Footer----------------------- ***/
 .footer-section{
-  background-color: var(--secondaryshade);
+  background-color: var(--primaryshade);
 }
 .footer-section .logo{
   height: 70px;

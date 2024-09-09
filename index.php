@@ -35,8 +35,6 @@
 
     <!-- animate css  -->
     <link rel="stylesheet" href="assets/css/animate.css" />
-    <!-- common style -->
-    <link rel="stylesheet" href="assets/css/common_style.css" />
     <!-- home style -->
     <link rel="stylesheet" href="assets/css/home_style.css" />
   </head>
@@ -446,7 +444,7 @@
                       </li>
                       <li class="mt-3 color-secondaryshade">
                         <b class="color-primary fsz-18 p-1 me-1">our Vision:</b>
-                        Here !!!!! We uphold the highest ethical standards, ensuring honesty and trust in all our services.We maintain open and clear communication, fostering trust and understanding with our clients and users.
+                        We uphold the highest ethical standards, ensuring honesty and trust in all our services.We maintain open and clear communication, fostering trust and understanding with our clients and users.
                       </li>
                     </ul>
                   </div>
@@ -459,8 +457,9 @@
         <!--  End About us  -->
 
         <!-- our clients start-->
-        <marquee class="our-clients" behavior="" direction="right">
-          <div  class="">
+         <hr class="m-0">
+          <div class="our-clients">
+            <div class="scroll-content">
               <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
               <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
               <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
@@ -468,8 +467,16 @@
               <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
               <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
               <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+              <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+              <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+              <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+              <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+              <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+              <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+              <img class="client_logo" src="assets/img/XEmp-logo9.png" alt="">
+            </div>
           </div>
-        </marquee>
+        <hr class="m-0">
         <!-- our clients end -->
       </main>
       <!--End-Contents-->
