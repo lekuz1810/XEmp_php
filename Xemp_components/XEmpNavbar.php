@@ -1,7 +1,7 @@
 <!-- Navbar start -->
 <nav class="navbar navbar-expand-lg tc-navbar-st2">
     <div class="container">
-      <a class="navbar-brand me-lg-4 flex" href="#">
+      <a class="navbar-brand me-lg-4 flex" href="index.php">
         <img class="logo" src="assets/img/XEmp-logo9.png" alt="">
       </a>
       <button

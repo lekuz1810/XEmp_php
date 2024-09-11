@@ -73,6 +73,58 @@
   }
 }
 
+.Xempnavbar2{
+  width: 100%;
+  padding: 5px 10px;
+  z-index: 99;
+}
+.Navbar2logo {
+  height: 45px !important;
+}
+.Xempnavbar2 .navbar-nav .nav-link {
+  color: var(--secondary);
+  opacity: 1;
+  padding: 10px 25px;
+  border-radius: 10px;
+}
+.Xempnavbar2 .navbar-nav .nav-link:hover {
+  background-color: var(--primaryshade);
+}
+.Xempnavbar2 .navbar-nav .nav-link.active {
+  background-color: var(--secondary);
+  color: var(--primary);
+  font-weight: bold;
+}
+.Xempnavbar2 .butn{
+  background-color: var(--secondary);
+  color: var(--primary);
+  font-weight: bold;
+}
+.Xempnavbar2 .butn:hover{
+  background-color: var(--secondaryshade);
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+}
+@media screen and (max-width: 991px) {
+  .Xempnavbar2 {
+    position: relative;
+    background-color: var(--primary);
+  }
+  .Xempnavbar2 .navbar-nav {
+    margin-top: 15px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    display: block;
+  }
+  .Xempnavbar2 .navbar-nav .nav-link {
+    margin: 0;
+  }
+  .Xempnavbar2 .butn{
+    margin-top: 15px;
+  }
+}
+
+
 /* --------------- header st2 --------------- */
 .tc-header-st2 {
   position: relative;
@@ -607,7 +659,7 @@
 
 /** ------------------ contact us Page ---------------- **/
 .section-Contactus{
-  background-image: linear-gradient(var(--primary) 70%, var(--secondaryshade) 30%);
+  background-image: linear-gradient(var(--primary) 70%, var(--primaryshade) 30%);
   padding-top: 150px;
 }
 .cat-item{
@@ -641,5 +693,57 @@
 @media screen and (max-width: 991px) {
   .section-Contactus{
     padding-top: 0px;
+  }
+}
+
+/* ------------ Admin Panel Page ------------ */
+.AdminSection{
+  background-color:var(--secondaryshade);
+  padding-top: 90px;
+}
+.AdminSection .heading{
+  font-size: 24px;
+}
+.AdminSection .box-shadow{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.AdminSection img{
+  max-height: 400px;
+}
+.AdminSection .ourtable{
+  height: 400px;
+}
+.AdminSection .ourtable2 thead{
+  background-color: var(--secondaryshade) !important;
+}
+.AdminSection th, td {
+  padding: 7px;
+  border: 1px solid var(--secondaryshade);
+  text-align: center;
+}
+.AdminSection td{
+  background-color: var(--primaryshade);
+}
+.AdminSection .ourtable th{
+  color: var(--secondary);
+}
+.AdminSection .smallcards tr td{
+  background-color: transparent;
+  border:none;
+  padding: 10px;
+  text-align: left;
+  color: var(--secondary);
+}
+@media (max-width:480px) {
+  .AdminSection .heading{
+    font-size: 16px;
+  }
+  .AdminSection .ourtable2 table{
+    display: block;
+    overflow: scroll;
+  }
+  .AdminSection th, .AdminSection td{
+    font-size: 12px;
+    padding: 7px;
   }
 }

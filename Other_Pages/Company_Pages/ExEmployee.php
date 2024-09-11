@@ -1,3 +1,17 @@
+<?php
+
+    // MySql Connection
+    include 'Company_components/Company_MySql_Conn.php';
+
+    session_start();
+
+    // Check if the user is logged in and is an employee
+    // if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'ExEmployee') {
+    //     header("Location: index.php");
+    //     exit();
+    // }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

@@ -1,3 +1,59 @@
+<?php
+  // Start session to manage user login state
+  session_start();
+
+  // Database connection
+  include 'Company_components/Company_MySql_Conn.php';
+
+  $error_message = ""; // Initialize an empty error message
+
+  // Check if the form was submitted
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      // Get the form input
+      $username = $_POST['username'];
+      $password = $_POST['password'];
+
+      // Prepare SQL statement to avoid SQL injection
+      $stmt = $conn->prepare("SELECT * FROM companylogin WHERE username = ?");
+      $stmt->bind_param('s', $username);
+      $stmt->execute();
+      $result = $stmt->get_result();
+
+      // Check if the username exists in the database
+      if ($result->num_rows === 1) {
+          // Fetch the user data
+          $user = $result->fetch_assoc();
+
+          // Directly compare plain text passwords
+          if ($password === $user['password']) {
+              // Password is correct, set session and redirect based on role
+              $_SESSION['username'] = $user['username'];
+              $_SESSION['role'] = $user['role'];
+
+              if ($user['role'] === 'Admin') {
+                  // Redirect to Admin Panel
+                  header("Location: CompanyAdmin.php");
+                  exit();
+              } else {
+                  // Redirect to Employee Panel
+                  header("Location: HRAdmin.php");
+                  exit();
+              }
+          } else {
+              // Password is incorrect
+              $error_message = "Incorrect password!";
+          }
+      } else {
+          // Username not found
+          $error_message = "Username not found!";
+      }
+
+      // Close statement and connection
+      $stmt->close();
+  }
+
+  $conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,7 +110,8 @@
           <p class="color-secondary mt-3 text-xl text-center text-gray-800 font-bold md:leading-tight lg:leading-tight">Login</p>
           <!-- End Title -->
           <!-- Form starts here  -->
-          <form class="mt-5">
+          <form method="POST" class="mt-5">
+            <p id="incorrect" class="mb-1 text-red-500 text-center"><?php echo $error_message; ?></p>
             <div class="mb-4">
               <label for="hs-hero-email-2" class="block text-sm font-medium"
                 ><span class="sr-only"
@@ -63,6 +120,7 @@
               >
               <input
                 type="email"
+                name="username"
                 id="hs-hero-email-2"
                 class="py-3 px-4 block w-full border border-gray-500 rounded-lg text-sm focus:border-gray-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none focus:outline-none"
                 placeholder="Enter Username or Employee Id*"
@@ -73,9 +131,9 @@
               <label for="hs-hero-password-2" class="block text-sm font-medium"
                 ><span class="sr-only">Password</span></label
               >
-
               <input
                 type="password"
+                name="password"
                 id="hs-hero-password-2"
                 class="py-3 px-4 block w-full border border-gray-500 rounded-lg text-sm focus:border-gray-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none focus:outline-none"
                 placeholder="Password*"
@@ -92,7 +150,7 @@
 
             <div class="grid">
               <button
-                type="submit"
+                type="Submit" name="Submit" value="Submit" title="Sign In"
                 class="butn py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg disabled:opacity-50 disabled:pointer-events-none"
               >
                 Sign up
@@ -122,5 +180,30 @@
 
     <script src="companyJS.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
+    <?php
+      // if(isset($_POST['Submit'])){
+
+
+      // // MySql Connection
+      // include 'Company_components/Company_MySql_Conn.php';
+
+      //     $username = $_POST['username'];
+      //     $password = $_POST['password'];
+      //     $role = "Employee";
+
+      //     $stmt = $conn->prepare("insert into companyLogin(username, password, role) VALUES(?,?,?)");
+      //     $stmt->bind_param("sss",$username,$password,$role);
+      //     $stmt->execute();
+      //     $stmt->close();
+      //     $conn->close();
+
+      //     echo "Success created a new Sign In";
+
+      // }else{
+      //   echo "Error";
+      // }
+    ?>
+
   </body>
 </html>

@@ -49,6 +49,39 @@
 .color-secondaryshade{
   color: var(--secondaryshade);
 }
+
+/* Common Button For all */
+
+.butn {
+  background-color: var(--secondary);
+  color: var(--primary);
+  font-weight: bold;
+  border: 1px solid var(--primary);
+  padding: 15px 35px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  position: relative;
+  text-align: center;
+  border-radius: 10px;
+}
+.butn:hover {
+  -webkit-box-shadow: 4px 5px 0 #0005;
+  box-shadow: 4px 5px 0 #0005;
+  -webkit-box-shadow: 7px 10px 15px #0004;
+  box-shadow: 7px 10px 15px #0004;
+  background-color: var(--secondaryshade);
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+}
+@media screen and (max-width: 991px) {
+  .butn {
+    padding: 10px 20px;
+  }
+  .butn * {
+    font-size: 13px !important;
+  }
+}
+
 /*** Spinner ***/
 #spinner {
   opacity: 0;

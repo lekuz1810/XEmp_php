@@ -1,3 +1,60 @@
+<?php
+
+  // Start session to manage user login state
+  session_start();
+
+  // Database connection
+  include 'Company_components/Company_MySql_Conn.php';
+
+  $error_message = ""; // Initialize an empty error message
+
+  // Check if the form was submitted
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      // Get the form input
+      $username = $_POST['username'];
+      $password = $_POST['password'];
+      $role = $_POST['option'];
+
+      // Prepare SQL statement to avoid SQL injection
+      $stmt = $conn->prepare("SELECT * FROM userlogin WHERE username = ?");
+      $stmt->bind_param('s', $username);
+      $stmt->execute();
+      $result = $stmt->get_result();
+
+      // Check if the username exists in the database
+      if ($result->num_rows === 1) {
+          // Fetch the user data
+          $user = $result->fetch_assoc();
+
+          // Directly compare plain text passwords
+          if ($password === $user['password']) {
+              // Password is correct, set session and redirect based on role
+              $_SESSION['username'] = $user['username'];
+
+              if ($role === 'BGVVendor') {
+                  // Redirect to Admin Panel
+                  header("Location: BGVVendor.php");
+                  exit();
+              } else {
+                  // Redirect to Employee Panel
+                  header("Location: EXEmployee.php");
+                  exit();
+              }
+          } else {
+              // Password is incorrect
+              $error_message = "Incorrect password!";
+          }
+      } else {
+          // Username not found
+          $error_message = "Username not found!";
+      }
+
+      // Close statement and connection
+      $stmt->close();
+}
+
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -130,13 +187,16 @@
         </div>
         <div class="SubHeroContent lg:h-screen lg:col-span-4 w-full mx-auto px-4 py-6 sm:px-6 sm:pt-0 lg:px-8 lg:pt-20 lg:pb-20">
           <div class="formCard rounded-lg">
-            <form class="w-full mt-5 mx-auto p-5 ">
+            <!-- Form Start -->
+            <form class="w-full mt-5 mx-auto p-5" id="UserLoginForm" method="POST" action="">
               <div class="mb-4">
                 <div class="text-center mx-auto mb-3">
+                  <!-- Error Messsage -->
+                  <p id="incorrect" class="mb-1 text-red-500"><?php echo $error_message; ?></p>
                   <div class="w-full flex justify-center">
                     <div class="m-2">
-                      <input type="radio" name="option" value="BvAgency" onclick="changeText(event)">
-                      <label class="fontStyle-secondary font-semibold">Bv Agency</label>
+                      <input type="radio" name="option" value="BGVVendor" onclick="changeText(event)">
+                      <label class="fontStyle-secondary font-semibold">BGV Vendor</label>
                     </div>
                     <div class="m-2">
                       <input type="radio" name="option" value="ExEmployee" onclick="changeText(event)">
@@ -154,6 +214,7 @@
                   id="hs-hero-email-2"
                   class="fontStyle-secondary py-3 px-4 block w-full rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none focus:outline-none"
                   placeholder="Enter Username or Employee Id*"
+                  name="username"
                 />
               </div>
     
@@ -166,6 +227,7 @@
                   id="hs-hero-password-2"
                   class="fontStyle-secondary py-3 px-4 block w-full rounded-lg text-sm disabled:opacity-50 disabled:pointer-events-none focus:outline-none"
                   placeholder="Password*"
+                  name="password"
                 />
               </div>
     
@@ -175,16 +237,13 @@
                   Forgot password?
                 </a>
               </div>
-    
               <div class="grid">
-                <button
-                  type="submit"
-                  class="butn fontStyle-secondary py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm rounded-lg border border-transparent focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                >
-                  Sign up
+                <button type="Submit" name="Submit" title="Sign In" class="butn fontStyle-secondary py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm rounded-lg border border-transparent focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                  Sign In
                 </button>
               </div>
             </form>
+            <!-- Form ENds -->
           </div>
         </div>
       </div>
@@ -198,6 +257,27 @@
     
     <script src="companyJS.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
+    <?php
+      // if(isset($_POST['Submit'])){
+      
+      // MySql Connection
+      //   include 'Company_components/Company_MySql_Conn.php';
+
+      //     $username = $_POST['username'];
+      //     $password = $_POST['password'];
+      //     $role = $_POST['option'];
+
+      //     $stmt = $conn->prepare("insert into userlogin(username, password, role) VALUES(?,?,?)");
+      //     $stmt->bind_param("sss",$username,$password,$role);
+      //     $stmt->execute();
+      //     $stmt->close();
+      //     $conn->close();
+      // echo "Success created a new Sign In"
+      // }else{
+      //   echo "Error";
+      // }
+    ?>
 
   </body>
 </html>

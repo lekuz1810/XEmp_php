@@ -1,3 +1,9 @@
+<?php
+
+    // MySql Connection
+    include 'Xemp_components/Xemp_Mysql_conn.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -33,14 +39,16 @@
     <!-- font family -->
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet" />
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <!-- animate css  -->
     <link rel="stylesheet" href="assets/css/animate.css" />
     <!-- home style -->
     <link rel="stylesheet" href="assets/css/home_style.css" />
   </head>
-
   <body class="home-st2">
-    
+
+    <!-- <div id="response"></div> -->
     <!-- ====== Start Loading ====== -->
     <div class="loader-wrap">
       <svg
@@ -83,7 +91,7 @@
         </div>
         <div class="load-text">
           <span>
-            <b>x</b>
+            <b>X</b>
           </span>
           <span>
             <b>E</b>
@@ -147,14 +155,12 @@
                   <span class="Xemp-heading"> XEmp </span>
                 </h1>
                 <h5 class="title mb-20 mt-3 font-bold">
-                  Your Trusted Partner with BV agency & Ex-Employee Services
+                  Your Trusted Partner on Ex-Employee Services
                 </h5>
                 <div class="text cr-666 mb-50">
-                  XEmp is dedicated to ensuring the integrity and satisfaction
-                  of both current and former employees. We specialize in connecting
-                  Background Verification Agency and offer comprehensive Ex-Employee
-                  Services designed to address and resolve critical
-                  employment-related issues.
+                XEmp is dedicated to providing comprehensive services for former employees.
+                 We specialize in resolving critical employment-related, legal, and background verification issues,
+                  ensuring a smooth and efficient process for accessing the essential documents and services to Ex-Employee.
                 </div>
                 <div class=" mt-20">
                   <a href="#" class="butn radius-5" >
@@ -183,31 +189,30 @@
                     </div>
 
                     <p>Contact us for demo!</p>
-                    <form action="#" class="form">
+
+                    <form id="demoForm" action="" class="form">
                       <div class="form-group">
                         <div class="item">
-                          <input type="text" placeholder="Full Name*" required/>
+                          <input type="text" placeholder="Full Name*" name="fullName" required/>
                         </div>
                         <div class="item">
-                          <input type="text" placeholder="Organisation name*" required/>
+                          <input type="text" placeholder="Organisation name*" name="OrgName" required/>
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="item">
-                          <input type="text" placeholder="Official Email ID*" required/>
+                          <input type="text" placeholder="Official Email ID*" name="OrgOffEmail" required/>
                         </div>
                         <div class="item">
-                          <input type="text" placeholder="Phone Number*" required/>
+                          <input type="text" placeholder="Phone Number*" name="OrgPhonenumber" required/>
                         </div>
                       </div>
-                      <a
-                        href="#"
-                        class="butn radius-5 w-100 mt-15"
-                      >
-                        <span>
-                          Send
-                        </span>
-                      </a>
+                      <button id="demobutton" type="submit" value="Submit" class="butn radius-5 w-100 mt-15">
+                        <span id="button-text">Send</span>
+                        <div id="loader" style="display:none;">
+                          <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                          <span role="status">Sending...</span>
+                        </div>
                     </form>
                   </div>
                 </div>
@@ -508,5 +513,45 @@
 
     <!-- === common === -->
     <script src="assets/js/common_js.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#demoForm').on('submit', function(event){
+                event.preventDefault(); // Prevent default form submission
+                
+                // Gather form data
+                var formData = $(this).serialize(); // Serialize the form data
+
+                $('#demobutton').prop('disabled', true);
+                $('#button-text').hide(); // Hide the "Send" text
+                $('#loader').show(); // Show the loader
+
+                // AJAX request
+                $.ajax({
+                    url: 'Xemp_components/SMTPDemo.php', // Replace with your actual PHP file to process the form
+                    type: 'POST',
+                    data: formData,
+                    success: function(response){
+                        $('#response').html(response); // Display the PHP response in the #response div
+                        $('#loader').hide(); // Hide the loader
+                        $('#demobutton').text('Done'); // Change button text to "Done"
+                        $('#demoForm')[0].reset(); // Reset the form after successful submission
+                    },
+                    error: function(xhr, status, error){
+                    $('#response').html('An error occurred: ' + error); // Display error message
+                    $('#loader').hide(); // Hide the loader
+                    $('#button-text').show(); // Show the "Send" text again
+                    $('#demobutton').prop('disabled', false); // Re-enable the button
+                }
+                });
+            });
+        });
+    </script>
+
+    <!-- <script>
+      if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+      }
+    </script> -->
   </body>
 </html>
