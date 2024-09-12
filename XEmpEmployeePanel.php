@@ -10,6 +10,10 @@
         header("Location: login.php");
         exit();
     }
+
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Cache-Control: post-check=0, pre-check=0", false);
+    header("Pragma: no-cache");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,13 +70,14 @@
         <div class="fluid-container AdminSection">
             <div class="fluid-container  p-5 pt-5">
                 <div class="text-center text-primary2  mx-auto mb-5" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">XEmp - Employee Panel</h1>
+                    <h3 class="mb-3">XEmp - Employee Panel</h3>
                 </div>
-                <div class="w-75 m-auto">
-                    <button class="butn d-flex align-items-center">New Member <span class="material-symbols-outlined ms-2">library_add</span></button>
+                <div class="w-75 m-auto d-flex justify-content-between">
+                    <a href="XEmpNewMember.php"><button class="butn d-flex align-items-center">New Member<span class="material-symbols-outlined ms-2">library_add</span></button></a>
+                    <a href="XEmplogout.php"><button class="butn d-flex align-items-center">Logout<span class="material-symbols-outlined ms-2">logout</span></button></a>
                 </div>
                 <div class="w-75 m-auto p-2" style="overflow:hidden;">
-                    <div class="ourtable2 w-100 my-3 rounded-xl bg-white" >
+                    <div class="ourtable2 w-100 my-3 rounded-xl shadow"  >
                         <table class="table-auto w-100 ">
                             <thead>
                                 <tr>

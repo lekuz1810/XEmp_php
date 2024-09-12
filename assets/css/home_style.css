@@ -747,3 +747,72 @@
     padding: 7px;
   }
 }
+
+/* ----------XEmp New Member Section Page ---------*/
+.XEmpNewMemberSection{
+  background-color: var(--secondaryshade);
+  padding-top: 90px;
+}
+.XEmpNewMemberSection .formcard .tablecss{
+  padding: 10px;
+  background-color: transparent;
+}
+.XEmpNewMemberSection .formcard .tablecss td{
+  background-color: transparent;
+  padding: 20px;
+}
+.XEmpNewMemberSection .formcard .tablecss .tablehead{
+  text-align: left;
+  font-size: 12px;
+  max-width: 100px !important;
+}
+@media (min-width:999px)  {
+  .XEmpNewMemberSection .formcard .tablecss .tablehead{
+    font-size: 16px;
+    min-width: 200px;
+  }
+}
+.XEmpNewMemberSection .formcard td input{
+  text-align: left;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid var(--secondary);
+  font-size: 14px;
+}
+.XEmpNewMemberSection .formcard td input:focus{
+  outline: none;
+}
+.XEmpNewMemberSection .formcard label{
+  color: var(--secondary);
+  font-family:"Titillium Web", sans-serif ;
+  font-weight: bold;
+  margin: 0 10px;
+}
+.XEmpNewMemberSection .formcard hr{
+  border-top: 1px solid var(--secondary);
+}
+.XEmpNewMemberSection .fileUpload{
+  border: none !important;
+}
+.XEmpNewMemberSection .textarea{
+  min-width: 70%;
+  height: 200px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid var(--secondary);
+  font-size: 14px;
+}
+.XEmpNewMemberSection .textarea:focus{
+  outline: none;
+}
+@media (max-width:480px){
+  .XEmpNewMemberSection .textarea{
+    width: 100%;
+    height: 200px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid var(--secondary);
+    font-size: 14px;
+  }
+}
